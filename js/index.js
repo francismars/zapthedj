@@ -15,12 +15,34 @@ async function subscribeKind1() {
         {
         async onevent(kind1) {
             console.log(kind1)
+            await subscribeKind0fromKind1(kind1)
         },
         async oneose() {
             console.log("oneose")
         },
         onclosed() {
-          console.log("Closed")
+            console.log("Closed")
+        }
+    })
+  }
+
+  async function subscribeKind0fromKind1(kind1) {
+    let kind0key = kind1.pubkey
+    const sub = pool.subscribeMany(
+        [...relays],
+        [{
+            kinds: [0],
+            authors: [kind0key]
+        }]
+    ,{
+        onevent(kind0) {
+            console.log(kind0)
+        },
+        async oneose() {
+            console.log("subscribeKind0sfromKind1s() EOS")
+        },
+        onclosed() {
+            console.log("subscribeKind0sfromKind1s() Closed")
         }
     })
   }
