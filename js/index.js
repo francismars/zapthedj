@@ -49,12 +49,12 @@ async function subscribeKind1() {
   }
 
   async function subscribeKind9735fromKind1(kind1) {
-    let kind0id = kind1.id
+    let kind1id = kind1.id
     const sub = pool.subscribeMany(
         [...relays],
         [{
             kinds: [9735],
-            authors: [kind0id]
+            "#e": [kind1id]
         }]
     ,{
         onevent(kind9735) {
