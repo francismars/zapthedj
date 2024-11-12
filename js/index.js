@@ -1,5 +1,3 @@
-console.log("isto entra")
-
 const kind1ID = "fe0ec3975412ad3cfe0c9370600e3ea5ab9fa6c414604ef4a2fd4ee66be0edf8"
 
 const pool = new NostrTools.SimplePool()
@@ -50,7 +48,6 @@ async function subscribeKind1() {
 
   async function subscribeKind9735fromKind1(kind1) {
     let kind1id = kind1.id
-    console.log(kind1id)
     const sub = pool.subscribeMany(
         [...relays],
         [{
