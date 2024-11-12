@@ -1,6 +1,6 @@
 console.log("isto entra")
 
-const kind1ID = "416cb6413b8635edbaa11660e7bc032af7d08e3c94ec1d87afa2926d26621865"
+const kind1ID = "fe0ec3975412ad3cfe0c9370600e3ea5ab9fa6c414604ef4a2fd4ee66be0edf8"
 
 const pool = new NostrTools.SimplePool()
 const relays = ['wss://relay.damus.io', 'wss://relay.primal.net', 'wss://relay.nostr.band/', 'wss://relay.nostr.nu/']
