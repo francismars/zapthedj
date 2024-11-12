@@ -18,7 +18,7 @@ async function subscribeKind1() {
             await subscribeKind0fromKind1(kind1)
             await subscribeKind9735fromKind1(kind1)
         },
-        async oneose() {
+        oneose() {
             console.log("subscribeKind1() EOS")
         },
         onclosed() {
@@ -39,7 +39,7 @@ async function subscribeKind1() {
         onevent(kind0) {
             console.log(kind0)
         },
-        async oneose() {
+        oneose() {
             console.log("subscribeKind0sfromKind1s() EOS")
         },
         onclosed() {
@@ -50,6 +50,7 @@ async function subscribeKind1() {
 
   async function subscribeKind9735fromKind1(kind1) {
     let kind1id = kind1.id
+    console.log(kind1id)
     const sub = pool.subscribeMany(
         [...relays],
         [{
@@ -60,7 +61,7 @@ async function subscribeKind1() {
         onevent(kind9735) {
             console.log(kind9735)
         },
-        async oneose() {
+        oneose() {
             console.log("subscribeKind9735fromKind1() EOS")
         },
         onclosed() {
